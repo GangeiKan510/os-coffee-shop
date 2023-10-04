@@ -1,0 +1,16 @@
+<%- include('partials/header.ejs') %>
+  <div class="main">
+    
+    <h1>Coffee Deletion Form</h1>
+
+    <form method="POST" action="/delete">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Coffee Name</label>
+        <input name="name" class="form-control" aria-describedby="emailHelp" placeholder="Name">
+        <small id="emailHelp" class="form-text text-muted">Be sure to check the name!</small>
+      </div>
+      <button type="submit" class="btn btn-danger create-button danger">Delete</button>
+    </form>
+
+  </div>
+<%- include('partials/footer.ejs') %>

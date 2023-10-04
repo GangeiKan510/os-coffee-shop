@@ -1,0 +1,26 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: aquamarine;
+  background-image: url("images/coffee-shop.jpg");
+  background-size: cover;
+}
+
+.main {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 2rem !important;
+  text-align: center;
+}
+
+.card {
+  margin: 1rem !important;
+}
+
+.cart {
+  margin-bottom: 2rem !important;
+}
+
+.create-button {
+  margin-top: 2rem;
+} 
