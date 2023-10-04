@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffee Shop</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <style>
+    body {
+  margin: 0px;
+  padding: 0px;
+  background-image: url("images/coffee-shop.jpg");
+  background-size: cover;
+}
+
+.main {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 2rem !important;
+  text-align: center;
+}
+
+.card {
+  margin: 1rem !important;
+}
+
+.cart {
+  margin-bottom: 2rem !important;
+}
+
+.create-button {
+  margin-top: 2rem;
+} 
+  </style>
+</head>
+<body>
+  <div class="main">
+    
+    <h1>Coffee Detail Form</h1>
+
+    <% for (let i=0; i<coffee.length; i++){%>
+    <form method="POST" action="/update/<%= coffee[i].name %>">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Coffee Name</label>
+        <input name="name" value="<%= coffee[i].name %>" class="form-control" aria-describedby="emailHelp" placeholder="Name">
+        <small id="emailHelp" class="form-text text-muted">Can't wait for you to put this on the menu!</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Description</label>
+        <input name="description" value="<%= coffee[i].description %>" class="form-control" placeholder="Description">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Price</label>
+        <input name="price" value="<%= coffee[i].price %>" class="form-control" placeholder="Price">
+      </div>
+      <button type="submit" class="btn btn-primary create-button">Update Coffee!</button>
+    </form>
+    <%}%>
+
+  </div>
+<%- include('partials/footer.ejs') %>

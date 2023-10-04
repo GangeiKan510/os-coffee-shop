@@ -17,9 +17,7 @@ app.route('/')
 .get(async (req, res) => {
 
     const coffeeList = await Coffee.findAll();
-    // const coffeeMenu = document.getElementsByClassName('card');
 
-    // console.log(coffeeMenu);
     res.render('home', {
         coffee: coffeeList
     });
@@ -42,10 +40,39 @@ app.route('/create')
 
 // Update Route
 app.route('/update')
-.put( async(req, res) => {
+.get(async (req, res) => {
+    const coffeeList = await Coffee.findAll();
 
-    res.send("Successfully updated!");
+    res.render('update', {
+        coffee: coffeeList
+    });
+})
 
+app.route('/update/:coffeeName')
+.get(async (req, res) => {
+
+    const coffeeSelected = await Coffee.findAll({
+        where: {
+            name: req.params.coffeeName
+        }
+    });
+    console.log("Coffee selected:", coffeeSelected);
+    res.render('update-form', {
+        coffee: coffeeSelected
+    });
+})
+.post( async (req, res) => {
+    try {
+        await Coffee.update({ name: req.body.name }, {
+            where: {
+              name: req.params.coffeeName,
+            },
+          });
+
+          res.redirect('/');
+    } catch (error) {
+        res.send(error);
+    }
 });
 
 // Route to Delete
