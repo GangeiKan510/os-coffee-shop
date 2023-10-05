@@ -7,15 +7,14 @@ const app = express();
 
 // exporting routes
 const coffee = require('./routes/Coffee');
+const cartItems = require('./routes/Cart');
 
 app.set('view engine', 'ejs');
 
 app.use(express.static(__dirname +'/public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Home Route
-app.route('/')
-.get(async (req, res) => {
+app.get('/', async (req, res) => {
 
     const coffeeList = await Coffee.findAll();
 
@@ -25,7 +24,7 @@ app.route('/')
 });
 
 app.use('/coffee', coffee)
-
+app.use('/cart', cartItems);
 
 app.listen(3000, async () => {
     console.log('Example app listening on port 3000!');

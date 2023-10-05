@@ -49,7 +49,7 @@
             <p class="card-text"><%= coffee[i].description %></p>
             <p class="card-text">Price: <%= coffee[i].price %></p>
             <form action="/coffee/list/delete/<%= coffee[i].name %>" method="post">
-              <a href="<%= coffee[i].name  %>" class="btn btn-primary">Update</a>
+              <a href="list/<%= coffee[i].name  %>" class="btn btn-primary">Update</a>
               <button type="submit" class="btn btn-danger">
                 Delete 
               </button>
