@@ -6,7 +6,7 @@ body {
   background-size: cover;
 }
 
-.main {
+.main, .cards {
   margin-left: 10%;
   margin-right: 10%;
   margin-top: 2rem !important;
@@ -24,3 +24,4 @@ body {
 .create-button {
   margin-top: 2rem;
 } 
+

@@ -40,7 +40,7 @@
     <h1>Coffee Detail Form</h1>
 
     <% for (let i=0; i<coffee.length; i++){%>
-    <form method="POST" action="/update/<%= coffee[i].name %>">
+    <form method="POST" action="<%= coffee[i].name %>">
       <div class="form-group">
         <label for="exampleInputEmail1">Coffee Name</label>
         <input name="name" value="<%= coffee[i].name %>" class="form-control" aria-describedby="emailHelp" placeholder="Name">
