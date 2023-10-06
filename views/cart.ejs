@@ -1,15 +1,16 @@
 <%- include('partials/header.ejs') %>
   <div class="main">
-    <a href="http://localhost:3000/">
-      <svg xmlns="http://www.w3.org/2000/svg" height="50" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+    <h1>Your Cart</h1>
+    <a href="http://localhost:3000/home">
+      <svg xmlns="http://www.w3.org/2000/svg" height="40" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
       </svg>
     </a>
-    <h1>Your Cart</h1>
+    <hr>
     <div class="row">
       <% for (let i=0; i<cart.length; i++){%>
-        <div class="card inline" style="width: 18rem;">
-          <img class="card-img-top" src="/images/coffee.jpeg" alt="Card image cap">
+        <div class="mx-auto card inline" style="width: 18rem;">
+          <img class="card-img-top" src="/images/coffee.pg" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title"><%= cart[i].name %></h5>
             <p class="card-text">Price: <%= cart[i].price %></p>

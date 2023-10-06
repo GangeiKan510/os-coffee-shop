@@ -8,21 +8,14 @@ const app = express();
 // exporting routes
 const coffee = require('./routes/Coffee');
 const cartItems = require('./routes/Cart');
+const home = require('./routes/Home');
 
 app.set('view engine', 'ejs');
 
 app.use(express.static(__dirname +'/public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/', async (req, res) => {
-
-    const coffeeList = await Coffee.findAll();
-
-    res.render('home', {
-        coffee: coffeeList
-    });
-});
-
+app.use('/home', home);
 app.use('/coffee', coffee)
 app.use('/cart', cartItems);
 

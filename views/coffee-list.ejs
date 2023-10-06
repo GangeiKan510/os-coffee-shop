@@ -37,12 +37,13 @@
 <body>
   <div class="main">
     
-    <h1>Coffee Roster</h1>
+    <h1>Coffee Menu</h1>
+    <hr>
     <a style="margin-top: 1rem;" href="/coffee/create" class="btn btn-success">Create</a>
 
     <div class="row" style="margin-top: 1rem;">
       <% for (let i=0; i<coffee.length; i++){%>
-        <div class="card" style="width: 18rem;">
+        <div class="card mx-auto" style="width: 18rem;">
           <img class="card-img-top" src="..." alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title"><%= coffee[i].name %></h5>

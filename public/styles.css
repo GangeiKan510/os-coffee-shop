@@ -10,18 +10,33 @@ body {
   margin-left: 10%;
   margin-right: 10%;
   margin-top: 2rem !important;
-  text-align: center;
+  text-align: left;
 }
 
 .card {
   margin: 1rem !important;
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
 }
 
 .cart {
   margin-bottom: 2rem !important;
 }
 
+.cart-svg {
+  text-align: right;
+}
 .create-button {
   margin-top: 2rem;
 } 
+
+.heading {
+  margin-left: 5rem;
+  text-align: right !important;
+}
+
+.row {
+  padding: 3rem;
+}
 
