@@ -1,19 +1,28 @@
 <%- include('partials/header.ejs') %>
   <div class="main">
-    <h1>Your Cart</h1>
-    <a href="http://localhost:3000/home">
-      <svg xmlns="http://www.w3.org/2000/svg" height="40" fill="#EAB543" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
-        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
-      </svg>
-    </a>
+    <div class="cart-nav">
+      <div>
+        <a href="http://localhost:3000/home">
+          <svg xmlns="http://www.w3.org/2000/svg" height="40" fill="#fbac00" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+          </svg>
+        </a>
+      </div>
+      <div>
+        <div class="cart-nav">
+          <h1><span class="logo-left">Cafe</span><span style="color: #fbac00">SE</span>:<span></span></h1>
+          <h1> Your Cart</h1>
+        </div>
+      </div>
+    </div>
     <hr>
-    <div class="row">
+    <div class="row row-cart">
       <% for (let i=0; i<cart.length; i++){%>
         <div class="mx-auto card inline" style="width: 18rem;">
           <img class="card-img-top" src="/images/coffee.pg" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title"><%= cart[i].name %></h5>
-            <p class="card-text">Price: ₱<%= cart[i].price %>.00</p>
+            <p class="card-text">Price: ₱ <%= cart[i].price %>.00</p>
             <p>Quantity: 1</p>
             <div class="btn-group" style="margin-bottom: 1rem;">
               <button type="button" class="btn btn-outline-secondary">
@@ -30,11 +39,30 @@
               </button>
             </div>
             <form action="/cart/delete/<%= cart[i].id %>" method="post">
-              <button type="submit" href="#" class="btn btn-danger">Remove from Cart</button>
+              <button type="submit" href="#" class="btn btn-danger">Remove</button>
             </form>
           </div>
         </div>
         <%}%>
     </div>
+
+    <footer class="py-3 py-3-nopd my-4 fixed">
+      <div style="background-color: white;">
+        <div class="order-details">
+          <p><span style="font-weight: bold;">Delivery Charge:</span><span style="color: #fbac00;"> ₱ 49.00</span></p>
+          <p><span style="font-weight: bold;">Total Bill:</span><span style="color: #fbac00;"> ₱ <%= totalBill %>.00</span></p>
+        </div>
+      </div>
+      <div>
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li class="nav-item text-color"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+          <li class="nav-item text-color"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+          <li class="nav-item text-color"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+          <li class="nav-item text-color"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+          <li class="nav-item text-color"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+        </ul>
+      </div>
+      <p class="text-center text-muted color">© <%= year %> CafeSE, Inc.</p>
+    </footer>
   </div>
 <%- include('partials/footer.ejs') %>

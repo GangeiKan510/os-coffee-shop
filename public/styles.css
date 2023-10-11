@@ -14,6 +14,13 @@ body {
   border-bottom: #fbac00 !important;
 }
 
+.btn-danger{
+  background-color: #ff4400;
+  border-color: #ff4400;
+  --bs-btn-hover-bg: #e83e00;
+  --bs-btn-hover-border-color: #e83e00;
+}
+
 .text-color, .text-muted {
   color: white !important;
 }
@@ -85,16 +92,30 @@ body {
   margin-bottom: 8rem;
 }
 
-.navbar {
+.mb-3 {
+  padding-top: 1rem !important;
+}
+
+.my-4 {
+  margin-top: 0px !important;
+}
+
+.navbar, .cart-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.row {
-  padding: 3rem;
-  padding-top: 0px;
-  padding-bottom: 0px;
+.order-details {
+  color: rgb(0, 0, 0) !important;
+  background: white;
+  padding-top: 0.5rem;
+  padding-bottom: 0.25px;
+  margin-left: 10%;
+  margin-right: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .pb-3 {
@@ -102,7 +123,21 @@ body {
 }
 
 .py-3 {
+  border-top: 1px solid #ffca68;
   padding-bottom: 0px !important;
   margin-bottom: 0px !important;
+}
+
+.py-3-nopd {
+  padding-top: 0px !important;
+}
+
+.row {
+  padding: 3rem;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.row-cart {
+  padding-bottom: 7rem;
 }
 

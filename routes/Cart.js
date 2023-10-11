@@ -6,8 +6,18 @@ router.get('/', async (req, res) => {
 
   const cartItems = await Cart_Items.findAll()
 
+  const year = new Date().getFullYear();
+
+  const totalBill = cartItems.map((result) => {
+    return result.price
+  }).reduce((accumulator, result) => {
+    return accumulator + result;
+  })
+
   res.render('cart', {
     cart: cartItems,
+    year: year,
+    totalBill: totalBill
   });
 })
 
