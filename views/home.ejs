@@ -1,11 +1,12 @@
 <%- include('partials/header.ejs') %>
   <div class="main">
     <nav class="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand" href="#">
-        <h1>Home</h1>
-        <p>CPU, Iloilo City, Philippines</p>
-      </a>
-    
+      <div>
+        <a class="navbar-brand" href="#">
+          <h1><span class="logo-left">Cafe</span>SE</h1>
+          <p class="address">CPU, Iloilo City, Philippines</p>
+        </a>  
+      </div>
       <div class="cart-icon">
         <div class="heading">
           <a class="cart-svg" href="http://localhost:3000/cart">
@@ -15,12 +16,12 @@
           </a>
         </div>
       </div>
-    
+
     </nav>
 
-    <form action="/search/">
+    <form action="home/search/latte">
       <div class="input-group rounded">
-        <input id="search-input" type="search" class="form-control rounded" placeholder="Search for a coffee" aria-label="Search" aria-describedby="search-addon" />
+        <input id="search-input" type="search" class="form-control rounded coffee-search" placeholder="Search for a coffee" aria-label="Search" aria-describedby="search-addon" />
         <button type="submit" class="btn btn-primary">
           <span class="btn input-group-text border-0" id="search-addon">
             <i class="fas fa-search">
@@ -41,8 +42,8 @@
           <img class="card-img-top" src="/images/coffee.jg" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title" id="<%=coffee[i].id%>"><%= coffee[i].name %></h5>
-            <p class="card-text"><%= coffee[i].description %></p>
-            <p class="card-text">Price: ₱<%= coffee[i].price %></p>
+            <p class="card-text address"><%= coffee[i].description %></p>
+            <p class="card-title">Price: ₱ <%= coffee[i].price %>.00</p>
             <form action="/cart/add/<%= coffee[i].name %>/<%= coffee[i].price %>" method="post">
               <button type="submit" class="btn btn-primary">Add to Cart</button>
             </form>
@@ -50,8 +51,19 @@
         </div>
         <%}%>
     </div>
+    <footer class="py-3 my-4 fixed">
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item text-color"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+        <li class="nav-item text-color"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+        <li class="nav-item text-color"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+        <li class="nav-item text-color"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+        <li class="nav-item text-color"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+      </ul>
+      <p class="text-center text-muted color">© <%= year %> CafeSE, Inc.</p>
+    </footer>
 
   </div>
+  
   <script src="src/script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

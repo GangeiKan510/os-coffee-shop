@@ -1,9 +1,21 @@
 body {
   margin: 0px;
   padding: 0px;
-  background-color: aquamarine;
   background-image: url("images/coffee-shop.jpg");
   background-size: cover;
+}
+
+.address {
+  color: rgb(147, 147, 147);
+  font-size: 16px;
+}
+
+.border-bottom {
+  border-bottom: #fbac00 !important;
+}
+
+.text-color, .text-muted {
+  color: white !important;
 }
 
 .main, .cards {
@@ -27,6 +39,11 @@ body {
 .cart-svg {
   text-align: right;
 }
+
+.color {
+  color: white !important;
+}
+
 .create-button {
   margin-top: 2rem;
 } 
@@ -36,7 +53,56 @@ body {
   text-align: right !important;
 }
 
+.btn-primary {
+  --bs-btn-bg: #fbac00;
+  border-color: #fbac00;
+  --bs-btn-hover-bg: #ff4400;
+}
+
+.btn-primary:hover {
+  border-color: #ff4400 !important;
+}
+
+.coffee-search, .rounded {
+  border-bottom-right-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+}
+
+.fixed {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #fbac00;
+  text-align: center;
+}
+
+.logo-left {
+  font-family: 'Oxygen', sans-serif;
+}
+
+.main {
+  margin-bottom: 8rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .row {
   padding: 3rem;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.pb-3 {
+  padding-bottom: 0px !important;
+}
+
+.py-3 {
+  padding-bottom: 0px !important;
+  margin-bottom: 0px !important;
 }
 
