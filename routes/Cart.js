@@ -7,18 +7,32 @@ router.get('/', async (req, res) => {
   const cartItems = await Cart_Items.findAll()
 
   const year = new Date().getFullYear();
+  let totalBill = 0;
+  let deliveryCharge = 0;
 
-  const totalBill = cartItems.map((result) => {
-    return result.price
-  }).reduce((accumulator, result) => {
-    return accumulator + result;
-  })
+  if (cartItems.length) {
+    const totalBill = cartItems.map((result) => {
+      return result.price
+    }).reduce((accumulator, result) => {
+      return accumulator + result;
+    })
 
-  res.render('cart', {
-    cart: cartItems,
-    year: year,
-    totalBill: totalBill
-  });
+    const deliveryCharge = 49;
+  
+    res.render('cart', {
+      cart: cartItems,
+      year: year,
+      totalBill: totalBill,
+      deliveryCharge: deliveryCharge
+    });
+  } else {
+    res.render('cart', {
+      cart: cartItems,
+      year: year,
+      totalBill: totalBill,
+      deliveryCharge: deliveryCharge
+    });
+  }
 })
 
 // add to cart functionality

@@ -9,7 +9,7 @@ function filterCards() {
     let filtered = ""
 
     for(var i = 0; i < cards.length; i++) {
-      
+
         if(cards[i].innerText.toLowerCase().includes(keyword.toLowerCase())) {
           let template = `<div class="mx-auto card inline" style="width: 18rem;">${cards[i].innerHTML}</div>`
 
