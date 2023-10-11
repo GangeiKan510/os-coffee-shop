@@ -13,7 +13,7 @@
           <img class="card-img-top" src="/images/coffee.pg" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title"><%= cart[i].name %></h5>
-            <p class="card-text">Price: <%= cart[i].price %></p>
+            <p class="card-text">Price: ₱<%= cart[i].price %>.00</p>
             <form action="/cart/delete/<%= cart[i].id %>" method="post">
               <button type="submit" href="#" class="btn btn-danger">Remove from Cart</button>
             </form>

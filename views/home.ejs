@@ -33,9 +33,9 @@
         <div class="mx-auto card inline" style="width: 18rem;">
           <img class="card-img-top" src="/images/coffee.jg" alt="Card image cap">
           <div class="card-body">
-            <h5 class="card-title"><%= coffee[i].name %></h5>
+            <h5 class="card-title" id="<%=coffee[i].id%>"><%= coffee[i].name %></h5>
             <p class="card-text"><%= coffee[i].description %></p>
-            <p class="card-text">Price: <%= coffee[i].price %></p>
+            <p class="card-text">Price: ₱<%= coffee[i].price %></p>
             <form action="/cart/add/<%= coffee[i].name %>/<%= coffee[i].price %>" method="post">
               <button type="submit" class="btn btn-primary">Add to Cart</button>
             </form>

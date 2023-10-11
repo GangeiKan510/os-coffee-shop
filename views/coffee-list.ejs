@@ -48,8 +48,8 @@
           <div class="card-body">
             <h5 class="card-title"><%= coffee[i].name %></h5>
             <p class="card-text"><%= coffee[i].description %></p>
-            <p class="card-text">Price: <%= coffee[i].price %></p>
-            <form action="/coffee/list/delete/<%= coffee[i].name %>" method="post">
+            <p class="card-text">Price: <%= coffee[i].price %>.00</p>
+            <form action="/coffee/list/delete/<%= coffee[i].id %>" method="post">
               <a href="list/<%= coffee[i].name  %>" class="btn btn-primary">Update</a>
               <button type="submit" class="btn btn-danger">
                 Delete 

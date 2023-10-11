@@ -56,18 +56,18 @@ router.post('/list/:coffeeName', async (req, res) => {
             },
           });
 
-          res.redirect('/');
+          res.redirect('/coffee/list');
     } catch (error) {
         res.send(error);
     }
 });
 
 // Route to Delete
-router.post('/list/delete/:coffeeName', (async (req, res) => {
+router.post('/list/delete/:coffeeId', (async (req, res) => {
     try {
         await Coffee.destroy({
             where: {
-                name: req.params.coffeeName
+                id: req.params.coffeeId
             }
         })
         res.redirect('/coffee/list');
