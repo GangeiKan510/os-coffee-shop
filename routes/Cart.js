@@ -11,19 +11,21 @@ router.get('/', async (req, res) => {
   let deliveryCharge = 0;
 
   if (cartItems.length) {
+
+    let deliveryCharge = 49;
+
     const totalBill = cartItems.map((result) => {
+      deliveryCharge += deliveryCharge * .02
       return result.price
     }).reduce((accumulator, result) => {
       return accumulator + result;
     })
-
-    const deliveryCharge = 49;
   
     res.render('cart', {
       cart: cartItems,
       year: year,
       totalBill: totalBill,
-      deliveryCharge: deliveryCharge
+      deliveryCharge: deliveryCharge.toFixed(2)
     });
   } else {
     res.render('cart', {
