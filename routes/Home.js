@@ -21,26 +21,4 @@ router.get('/', async (req, res) => {
   });
 });
 
-router.get('/search/:keyword', async (req, res) => {
-
-  const keyword = req.params.keyword;
-
-  try {
-    const results = await Coffee.findAll({
-      where: {
-        [Op.or]: [
-          { name: { [Op.like]: `%${keyword}%` } },
-          { description: { [Op.like]: `%${keyword}%` } }
-        ]
-      }
-    });
-    
-    res.render('home', {
-      coffee: results
-    })
-  } catch (error) {
-    res.status(500).json({ message: 'Internal server error' });
-  }
-});
-
 module.exports = router;
