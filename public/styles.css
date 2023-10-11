@@ -139,3 +139,6 @@ body {
   padding-bottom: 7rem;
 }
 
+.w-100 {
+  max-height: 20rem !important;
+}

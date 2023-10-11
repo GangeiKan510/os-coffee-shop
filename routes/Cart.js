@@ -19,12 +19,14 @@ router.get('/', async (req, res) => {
       return result.price
     }).reduce((accumulator, result) => {
       return accumulator + result;
-    })
+    }) + deliveryCharge;
+
+
   
     res.render('cart', {
       cart: cartItems,
       year: year,
-      totalBill: totalBill,
+      totalBill: totalBill.toFixed(0),
       deliveryCharge: deliveryCharge.toFixed(2)
     });
   } else {
