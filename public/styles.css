@@ -19,6 +19,12 @@ body {
   --bs-btn-hover-border-color: #e83e00;
 }
 
+.card-img-top {
+  padding-top: 12px;
+  border-top-right-radius: 0.375rem;
+  border-top-left-radius: 0.375rem;
+}
+
 .text-color, .text-muted {
   color: white !important;
 }

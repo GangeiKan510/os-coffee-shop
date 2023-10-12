@@ -2,7 +2,7 @@
   <div class="main" id="main">
     <nav class="navbar navbar-expand-lg navbar-light">
       <div style="height: 5rem">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="http://localhost:3000/home">
           <h1><span class="logo-left">Cafe</span><span style="color: #fbac00">SE</span></h1>
           <p class="address">CPU, Iloilo City, Philippines</p>
         </a>  
@@ -38,7 +38,7 @@
     <div id="row" class="row">
       <% for (let i=0; i<coffee.length; i++){%>
         <div class="mx-auto card inline" style="width: 18rem;">
-          <img class="card-img-top" src="/images/coffee.jg" alt="Card image cap">
+          <img class="card-img-top" src="images/coffee.png" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title" id="<%=coffee[i].id%>"><%= coffee[i].name %></h5>
             <p class="card-text address"><%= coffee[i].description %></p>
@@ -52,7 +52,7 @@
     </div>
     <footer class="py-3 my-4 fixed">
       <ul class="nav justify-content-center border-bottom pb-3 mb-3 footer-home">
-        <li class="nav-item text-color"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+        <li class="nav-item text-color"><a href="http://localhost:3000/home" class="nav-link px-2 text-muted">Home</a></li>
         <li class="nav-item text-color"><a href="#" class="nav-link px-2 text-muted">Customer Service</a></li>
         <li class="nav-item text-color"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
         <li class="nav-item text-color"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>

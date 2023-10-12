@@ -10,7 +10,7 @@
       </div>
       <div>
         <div class="cart-nav">
-          <h1><span class="logo-left">Cafe</span><span style="color: #fbac00">SE</span>:<span></span></h1>
+          <h1 onclick="redirect()"><span class="logo-left">Cafe</span><span style="color: #fbac00">SE</span>:<span></span></h1>
           <h1> Your Cart</h1>
         </div>
       </div>
@@ -19,24 +19,28 @@
     <div class="row row-cart">
       <% for (let i=0; i<cart.length; i++){%>
         <div class="mx-auto card inline" style="width: 18rem;">
-          <img class="card-img-top" src="/images/coffee.pg" alt="Card image cap">
+          <img class="card-img-top" src="images/coffee.png" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title"><%= cart[i].name %></h5>
             <p class="card-text">Price: ₱ <%= cart[i].price %>.00</p>
-            <p>Quantity: 1</p>
+            <p>Quantity: <%= cart[i].quantity %></p>
             <div class="btn-group" style="margin-bottom: 1rem;">
-              <button type="button" class="btn btn-outline-secondary">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
-                  <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
-                </svg>
-                <span class="visually-hidden">Button</span>
-              </button>
-              <button type="button" class="btn btn-outline-secondary">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
-                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"></path>
-                </svg>
-                <span class="visually-hidden">Button</span>
-              </button>
+              <form action="/cart/subtract-quantity/<%= cart[i].id %>" method="post">
+                <button type="submit" class="btn btn-outline-secondary">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
+                    <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
+                  </svg>
+                  <span class="visually-hidden">Button</span>
+                </button>
+              </form>
+              <form action="/cart/add-quantity/<%= cart[i].id %>" method="post">
+                <button type="submit" class="btn btn-outline-secondary">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"></path>
+                  </svg>
+                  <span class="visually-hidden">Button</span>
+                </button>
+              </form>
             </div>
             <form action="/cart/delete/<%= cart[i].id %>" method="post">
               <button type="submit" href="#" class="btn btn-danger">Remove</button>
@@ -55,7 +59,7 @@
       </div>
       <div>
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-          <li class="nav-item text-color"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+          <li class="nav-item text-color"><a href="http://localhost:3000/home" class="nav-link px-2 text-muted">Home</a></li>
           <li class="nav-item text-color"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
           <li class="nav-item text-color"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
           <li class="nav-item text-color"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>

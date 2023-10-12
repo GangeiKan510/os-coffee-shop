@@ -1,8 +1,6 @@
 function filterCards() {
 
     let keyword = document.getElementById('filterInput').value.toLowerCase();
-  
-    let cards = document.getElementsByClassName('card');
 
     let row = document.getElementById('row');
 
@@ -20,4 +18,8 @@ function filterCards() {
     }
 
     row.innerHTML = filtered;
+}
+
+function redirect() {
+  window.location.href = "http://localhost:3000/home";
 }

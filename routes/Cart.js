@@ -15,13 +15,11 @@ router.get('/', async (req, res) => {
     let deliveryCharge = 49;
 
     const totalBill = cartItems.map((result) => {
-      deliveryCharge += deliveryCharge * .02
-      return result.price
+      deliveryCharge += deliveryCharge * .05
+      return result.price * result.quantity
     }).reduce((accumulator, result) => {
       return accumulator + result;
     }) + deliveryCharge;
-
-
   
     res.render('cart', {
       cart: cartItems,
@@ -40,7 +38,7 @@ router.get('/', async (req, res) => {
 })
 
 // add to cart functionality
-router.post('/add/:name/:price', async (req, res) => {
+router.post('/add/:name/:price/', async (req, res) => {
   const params = req.params;
 
   const cartItem = await Cart_Items.build({
@@ -50,6 +48,45 @@ router.post('/add/:name/:price', async (req, res) => {
 
   cartItem.save();
   console.log("Coffee successfully added to Cart!");
+});
+
+router.post('/add-quantity/:id', async (req, res) => {
+
+  const cartItemSelected = await Cart_Items.findAll({
+    where: {
+        id: req.params.id
+    }
+  });
+
+  Cart_Items.update({ 
+    quantity: cartItemSelected[0].quantity + 1
+    }, {
+    where: {
+      id: req.params.id,
+    },
+  });
+  res.redirect('/cart');
+});
+
+router.post('/subtract-quantity/:id', async (req, res) => {
+  
+  const cartItemSelected = await Cart_Items.findAll({
+    where: {
+        id: req.params.id
+    }
+  });
+
+  if (cartItemSelected[0].quantity > 1) {
+    Cart_Items.update({ 
+      quantity: cartItemSelected[0].quantity - 1
+      }, {
+      where: {
+        id: req.params.id,
+      },
+    });
+  
+    res.redirect('/cart');
+  }
 });
 
 //delete
