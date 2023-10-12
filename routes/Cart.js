@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
     let deliveryCharge = 49;
 
     const totalBill = cartItems.map((result) => {
-      deliveryCharge += deliveryCharge * .05
+      deliveryCharge += deliveryCharge * result.quantity * .05
       return result.price * result.quantity
     }).reduce((accumulator, result) => {
       return accumulator + result;

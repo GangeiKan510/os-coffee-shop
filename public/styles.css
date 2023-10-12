@@ -11,6 +11,10 @@ body {
 .border-bottom {
   border-bottom: #fbac00 !important;
 }
+/* 
+.btn {
+  --bs-btn-border-radius: 0px; 
+} */
 
 .btn-danger{
   background-color: #ff4400;
