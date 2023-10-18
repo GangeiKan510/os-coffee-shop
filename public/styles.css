@@ -68,6 +68,10 @@ body {
   text-align: right !important;
 }
 
+.heading-tagline {
+  font-weight: 200;
+} 
+
 .btn-primary {
   --bs-btn-bg: #fbac00;
   border-color: #fbac00;
@@ -91,6 +95,14 @@ body {
   background-color: #fbac00;
   text-align: center;
 }
+
+.form-title {
+  text-align: center;
+}
+
+.login-form {
+  padding: 1rem;
+} 
 
 .logo-left {
   font-family: 'Oxygen', sans-serif;
